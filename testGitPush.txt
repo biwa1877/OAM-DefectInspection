@@ -1,2 +1,0 @@
-create this file on my laptop, commit to local repositry
-push to online repository

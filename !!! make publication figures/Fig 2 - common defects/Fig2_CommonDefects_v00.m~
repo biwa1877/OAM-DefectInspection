@@ -1,0 +1,225 @@
+% This script makes figures of common point defects in semiconductor
+% manufacturing processes, i.e.,
+%   1. point defect on a flat substrate;
+%   2. point defect on a 1D line grating;
+%   3. point defect on two 1D gratings separated by a gap;
+%   4. point defect on a 2D contact grating.
+% 
+%% Defect #1. point defect on a flat substrate
+temp1 = ones(257);
+% figure(17);imagesc(abs(temp1));axis image;pause
+
+defect = 0.25 * (1 + 1i);
+
+temp2 = temp1;
+temp2(117:118,90:91) = temp2(117:118,90:91) - defect;   %0.5 * (1 + 1i);
+% temp2((149:151),(149:151)+5) = temp2((149:151),(149:151)+5) + defect/1.1;
+
+temp3 = temp1;
+temp3(117:118,90:91) = temp3(117:118,90:91) + defect;
+% temp3((149:151),(149:151)+5) = temp3((149:151),(149:151)+5) + defect/100;
+% temp3(145:155,145:155) = 0.5 * (1 + 1i);
+
+maskClean = temp1;
+
+maskDefect11 = temp2;
+
+maskDefect12 = temp3;
+
+cmin = min(abs([maskClean(:); maskDefect11(:); maskDefect12(:)]));
+cmax = max(abs([maskClean(:); maskDefect11(:); maskDefect12(:)]));
+
+figure(11);
+ax(1) = subplot(131);imagesc(abs(maskClean));axis image off;caxis([cmin cmax]);
+colormap bone;
+ax(2) = subplot(132);imagesc(abs(maskDefect11));axis image off;caxis([cmin cmax]);
+ax(3) = subplot(133);imagesc(abs(maskDefect12));axis image off;caxis([cmin cmax]);
+
+linkaxes(ax);
+
+posi = [50 533 1651 433];
+set(gcf, 'Position', posi);
+
+%%   Defect #2. point defect on a 1D line grating
+
+% clean grating
+temp1 = ones(255);
+temp1(:,2:5:end) = 1 + 1i;
+temp1(:,3:5:end) = 1 + 1i;
+
+% ==== defect grating #1: a break in a grating line
+
+% defect value
+defect = 0.25 * (1 + 1i);
+
+% defect position
+xrange = 117:118;
+yrange = 87:88;
+
+temp2 = temp1;
+temp2(xrange, yrange) = temp2(xrange, yrange) - defect;
+
+% ==== defect grating #2: a bridge between two grating lines
+
+% defect value
+defect = 0.35 * (1 + 1i);
+
+% defect position
+xrange = 117:118;
+yrange = 89:91;
+
+temp3 = temp1;
+temp3(xrange, yrange) = temp3(xrange, yrange) + defect;
+
+% ==== defect grating #3: a defect at random place
+
+% defect value
+defect = 0.35 * (1 + 1i);
+
+% defect position
+xrange = 117:118;
+yrange = 88:89;
+
+temp4 = temp1;
+temp4(xrange, yrange) = temp4(xrange, yrange) + defect;
+
+maskClean = temp1;
+
+maskDefect21 = temp2;
+
+maskDefect22 = temp3;
+
+maskDefect23 = temp4;
+
+cmin = min(abs([maskClean(:); maskDefect21(:); maskDefect22(:); maskDefect23(:)]));
+cmax = max(abs([maskClean(:); maskDefect21(:); maskDefect22(:); maskDefect23(:)]));
+
+figure(12);
+ax(1) = subplot(221);imagesc(abs(maskClean));axis image off;caxis([cmin*0.9 cmax]);
+colormap hot;
+ax(2) = subplot(222);imagesc(abs(maskDefect21));axis image off;caxis([cmin*0.9 cmax]);
+ax(3) = subplot(223);imagesc(abs(maskDefect22));axis image off;caxis([cmin*0.9 cmax]);
+ax(4) = subplot(224);imagesc(abs(maskDefect23));axis image off;caxis([cmin*0.9 cmax]);
+
+linkaxes(ax);
+
+posi = [50 4 1000 962];
+set(gcf, 'Position', posi);
+
+%%   Defect #3. point defect on two 1D gratings separated by a gap
+
+% clean grating
+temp1 = ones(255);
+temp1(:,2:5:end) = 1 + 1i;
+temp1(:,3:5:end) = 1 + 1i;
+temp1(117:118,:) = (1 + 1i) / 2;
+
+% defect value
+defect = 0.5 * (1 + 1i);
+
+% defect position
+xrange = 117:108;
+yrange = 87:88;
+
+% defect grating #1
+temp2 = temp1;
+temp2(xrange, yrange) = temp2(xrange, yrange) - defect;
+
+% defect grating #2
+temp3 = temp1;
+temp3(xrange, yrange) = temp3(xrange, yrange) + defect;
+
+maskClean = temp1;
+
+maskDefect31 = temp2;
+
+maskDefect32 = temp3;
+
+cmin = min(abs([maskClean(:); maskDefect31(:); maskDefect32(:)]));
+cmax = max(abs([maskClean(:); maskDefect31(:); maskDefect32(:)]));
+
+figure(13);
+ax(1) = subplot(131);imagesc(abs(maskClean));axis image off;caxis([cmin cmax]);
+colormap hot;
+ax(2) = subplot(132);imagesc(abs(maskDefect31));axis image off;caxis([cmin cmax]);
+ax(3) = subplot(133);imagesc(abs(maskDefect32));axis image off;caxis([cmin cmax]);
+
+linkaxes(ax);
+
+posi = [50 533 1651 433];
+set(gcf, 'Position', posi);
+
+%%   Defect #4. point defect on a 2D contact grating
+
+temp1 = ones(8);
+figure(17);imagesc(abs(temp1));axis image;pause
+temp1(3:5,3:5) = 1+1i;
+figure(17);imagesc(abs(temp1));axis image;pause
+temp1 = repmat(temp1, 32, 32);
+figure(17);imagesc(abs(temp1));axis image;pause
+temp2 = ones(257);
+temp2(2:end,2:end) = temp1;
+figure(17);imagesc(abs(temp2));axis image;
+
+maskClean = temp2;
+
+% defect position
+rangex = 98:99;   % centered on a contact
+rangey = 116:118;
+
+% rangex = 144:146;   % centered in between contacts
+% rangey = 144:146
+
+defect = 0.25 * (1 + 1i);
+
+maskDefect41 = temp2;
+maskDefect41(rangex,rangey) = maskDefect41(rangex,rangey) - defect;   %exp(1i*pi/4) * (1 + 1i) * 0.5;
+% maskDefect1(rangex+5,rangey+5) = maskDefect1(rangex+5,rangey+5) + defect;
+% maskDefect1(123:128,123:128) = 1+1i;
+% maskDefect1(130:135,130:135) = -(1+1i);
+
+maskDefect42 = temp2;
+% maskDefect2(144:146, 144:146) = 1 + 1i;
+maskDefect42(rangex,rangey) = maskDefect42(rangex,rangey) + defect;
+
+% maskClean = temp1;
+% 
+% maskDefect1 = temp2;
+% 
+% maskDefect2 = temp3;
+
+cmin = min(abs([maskClean(:); maskDefect41(:); maskDefect42(:)]));
+cmax = max(abs([maskClean(:); maskDefect41(:); maskDefect42(:)]));
+
+figure(17);
+ax(1) = subplot(131);imagesc(abs(maskClean));axis image off;caxis([cmin cmax]);
+colormap bone;
+ax(2) = subplot(132);imagesc(abs(maskDefect41));axis image off;caxis([cmin cmax]);
+ax(3) = subplot(133);imagesc(abs(maskDefect42));axis image off;caxis([cmin cmax]);
+
+linkaxes(ax);
+
+posi = [50 533 1651 433];
+set(gcf, 'Position', posi);
+
+
+%% plot all defects
+figure(18);
+
+cmin = min(abs([maskDefect12(:); maskDefect21(:); maskDefect22(:); maskDefect23(:); maskDefect32(:); maskDefect42(:)]));
+cmax = max(abs([maskDefect12(:); maskDefect21(:); maskDefect22(:); maskDefect23(:); maskDefect32(:); maskDefect42(:)]));
+
+ax(1)= subplot(231);imagesc(abs(maskDefect12));axis image;
+caxis([cmin*0.8 cmax*1.1]);colormap hot;
+ax(2)= subplot(234);imagesc(abs(maskDefect21));axis image;
+caxis([cmin*0.8 cmax*1.1]);colormap hot;
+ax(3)= subplot(235);imagesc(abs(maskDefect22));axis image;
+caxis([cmin*0.8 cmax*1.1]);colormap hot;
+ax(4)= subplot(236);imagesc(abs(maskDefect23));axis image;
+caxis([cmin*0.8 cmax*1.1]);colormap hot;
+ax(5)= subplot(232);imagesc(abs(maskDefect32));axis image;
+caxis([cmin*0.8 cmax*1.1]);colormap hot;
+ax(6)= subplot(233);imagesc(abs(maskDefect41));axis image;
+caxis([cmin*0.8 cmax*1.1]);colormap hot;
+
+linkaxes(ax)
