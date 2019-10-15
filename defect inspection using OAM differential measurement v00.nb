@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[    410259,      11365]
-NotebookOptionsPosition[    407841,      11299]
-NotebookOutlinePosition[    408184,      11314]
-CellTagsIndexPosition[    408141,      11311]
+NotebookDataLength[    409638,      11345]
+NotebookOptionsPosition[    407223,      11279]
+NotebookOutlinePosition[    407565,      11294]
+CellTagsIndexPosition[    407522,      11291]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -5676,7 +5676,7 @@ bOUs3h00LmD1j3EF07oqPa6Xubextt17g/1JkTs89j78gpWh1jd8Lg8JNsn/
 AWX1wA==
   "],
  FontSize->18,ExpressionUUID->"af6809ae-6112-4e14-938c-54e718c8d19a"]
-}, Open  ]],
+}, Closed]],
 
 Cell[CellGroupData[{
 
@@ -8611,7 +8611,7 @@ measurement:\n\n\t",
    3.7778444172258415`*^9}, {3.7778445546110373`*^9, 3.777844569233241*^9}, {
    3.77784462736922*^9, 3.7778446316068964`*^9}},
  FontSize->18,ExpressionUUID->"287b629c-1e5a-4fb9-8083-f72d9c8e06b7"]
-}, Open  ]],
+}, Closed]],
 
 Cell[CellGroupData[{
 
@@ -10143,7 +10143,7 @@ patterns are:\n\t",
    3.778427530874194*^9, 3.7784275319847107`*^9}, {3.7784485616661673`*^9, 
    3.7784485633538103`*^9}, {3.7788625707650833`*^9, 3.778862576431967*^9}},
  FontSize->18,ExpressionUUID->"d9d0ad40-ce5b-472e-8d74-0722cfe23b2d"]
-}, Open  ]],
+}, Closed]],
 
 Cell[CellGroupData[{
 
@@ -10159,7 +10159,7 @@ Cell["Section #8 : Noise Analysis", "Section",
  FontSize->24,ExpressionUUID->"5c5399ae-9d62-49d7-9a64-301b47c2642c"],
 
 Cell[TextData[{
- "\tDiffraction patterns in Fourier space:\n\t",
+ "Diffraction patterns in Fourier space:\n\t",
  Cell[BoxData[{
   FormBox[
    RowBox[{
@@ -11219,28 +11219,7 @@ Cell[TextData[{
      "\[Sigma]", ")"}]}], TraditionalForm]],
   FontSize->18,ExpressionUUID->"b9dec56f-6a81-4c7a-8a0e-7c95d046f2c2"],
  ";\n\twhere \[Sigma] is the standard deviation of the Gaussian distribution, \
-denoting the amount of noise present in the signal.\n\n",
- Cell[BoxData[
-  FormBox[
-   FractionBox[
-    SuperscriptBox[
-     RowBox[{"(", 
-      RowBox[{"|", 
-       RowBox[{"\[ScriptCapitalF]", 
-        RowBox[{"{", " ", 
-         RowBox[{
-          RowBox[{"\[ScriptCapitalO]", "(", 
-           RowBox[{
-            RowBox[{"x", "-", 
-             SubscriptBox["x", "s"]}], ",", 
-            RowBox[{"y", "-", 
-             SubscriptBox["y", "s"]}]}], ")"}], " ", "*", " ", 
-          RowBox[{
-           SuperscriptBox["Probe", "\[PlusMinus]"], "(", 
-           RowBox[{"x", ",", "y"}], ")"}]}], "}"}]}], "|"}], ")"}], "2"], 
-    "\[Placeholder]"], TraditionalForm]],
-  FontSize->36,ExpressionUUID->"9c2eee4a-b7a0-4595-a378-2863c83fc96c"],
- "\n"
+denoting the amount of noise present in the signal.\n\n"
 }], "Text",
  CellChangeTimes->{{3.7778126082917795`*^9, 3.7778130901208963`*^9}, {
    3.7778131660547647`*^9, 3.777813375057637*^9}, {3.777813413989493*^9, 
@@ -11293,12 +11272,13 @@ denoting the amount of noise present in the signal.\n\n",
    3.7788665258116055`*^9}, {3.778866829857891*^9, 3.7788668376360893`*^9}, {
    3.7788668766008663`*^9, 3.778866882852155*^9}, {3.7788721689499025`*^9, 
    3.7788721809219227`*^9}, {3.7788767307648263`*^9, 3.778876760248991*^9}, {
-   3.7788818567412186`*^9, 3.7788818700747643`*^9}},
+   3.7788818567412186`*^9, 3.7788818700747643`*^9}, {3.7792081577821693`*^9, 
+   3.779208158412119*^9}, 3.7794524652162504`*^9},
  FontSize->18,ExpressionUUID->"af4569a7-5312-4bae-9b4c-7fe2acefa8ec"]
 }, Open  ]]
 },
-WindowSize->{1520, 781},
-WindowMargins->{{-8, Automatic}, {Automatic, 0}},
+WindowSize->{1520, 771},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
 FrontEndVersion->"11.1 for Microsoft Windows (64-bit) (March 13, 2017)",
 StyleDefinitions->"Default.nb"
 ]
@@ -11336,9 +11316,9 @@ Cell[142532, 4011, 676, 14, 87, "Section", "ExpressionUUID" -> \
 "e5a964ae-8195-4b31-89c4-4fd59c1e4491"],
 Cell[143211, 4027, 58987, 1650, 2162, "Text", "ExpressionUUID" -> \
 "af6809ae-6112-4e14-938c-54e718c8d19a"]
-}, Open  ]],
+}, Closed]],
 Cell[CellGroupData[{
-Cell[202235, 5682, 554, 9, 101, "Section", "ExpressionUUID" -> \
+Cell[202235, 5682, 554, 9, 87, "Section", "ExpressionUUID" -> \
 "7ca1c66c-7dfc-48c4-be24-1017713b7b79"],
 Cell[202792, 5693, 25651, 704, 1113, "Text", "ExpressionUUID" -> \
 "8794dd58-c1b2-44ef-a73a-b1429895ba55"]
@@ -11354,17 +11334,17 @@ Cell[287647, 8001, 820, 16, 87, "Section", "ExpressionUUID" -> \
 "c48d5a3f-fef1-4145-88d6-d2f84f09a1a0"],
 Cell[288470, 8019, 19879, 593, 852, "Text", "ExpressionUUID" -> \
 "287b629c-1e5a-4fb9-8083-f72d9c8e06b7"]
-}, Open  ]],
+}, Closed]],
 Cell[CellGroupData[{
-Cell[308386, 8617, 1051, 22, 101, "Section", "ExpressionUUID" -> \
+Cell[308386, 8617, 1051, 22, 87, "Section", "ExpressionUUID" -> \
 "3f127b8d-9568-488c-9bac-e60d4ee9b6c4"],
 Cell[309440, 8641, 51626, 1503, 1741, "Text", "ExpressionUUID" -> \
 "d9d0ad40-ce5b-472e-8d74-0722cfe23b2d"]
-}, Open  ]],
+}, Closed]],
 Cell[CellGroupData[{
-Cell[361103, 10149, 683, 9, 65, "Section", "ExpressionUUID" -> \
+Cell[361103, 10149, 683, 9, 51, "Section", "ExpressionUUID" -> \
 "5c5399ae-9d62-49d7-9a64-301b47c2642c"],
-Cell[361789, 10160, 46036, 1136, 957, "Text", "ExpressionUUID" -> \
+Cell[361789, 10160, 45418, 1116, 883, "Text", "ExpressionUUID" -> \
 "af4569a7-5312-4bae-9b4c-7fe2acefa8ec"]
 }, Open  ]]
 }
